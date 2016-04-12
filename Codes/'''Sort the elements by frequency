@@ -1,0 +1,35 @@
+'''Sort the elements by frequency
+Example: Input array = {2,8,8,2,3,1,2,9,10};
+Output: {2,2,2,8,8,3,1,9,10}
+'''
+
+a=[2,8,8,2,3,1,2,9,10]
+li=[]
+dict={}
+dict2={}
+
+# insertring items into dictionary with keys as the element
+for i in a:
+    if i not in dict:
+        dict[i]=1
+    else:
+        dict[i]+=1
+print (dict)
+
+
+# changing keys to values and valiues to keys
+for key, value in dict.items():
+    if value in dict2:
+        dict2[value].append(key)
+    else:
+        dict2[value] = [key]
+print (dict2)  
+
+#sorting by frequency
+for key in dict2:
+    count = 0
+    for i in range(len(dict2[key])):
+        li.append(dict2[key][i])
+            
+        
+print (li)
